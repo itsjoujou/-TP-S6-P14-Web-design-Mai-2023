@@ -26,7 +26,7 @@
                         </ul>
                     </div>
                     <div class="col-2 text-end">
-                        <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                        <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" aria-label="Menu toggle">
                             <span></span>
                         </a>
                         <form action="#" class="search-form d-none d-lg-inline-block">
