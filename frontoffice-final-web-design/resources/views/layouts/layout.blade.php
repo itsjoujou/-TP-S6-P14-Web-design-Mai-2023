@@ -6,7 +6,7 @@
 	<meta name="author" content="Untree.co">
 	<link rel="shortcut icon" href="{{ asset('theme/favicon.png') }}">
 
-	<meta name="description" content=""/>
+	<meta name="description" content="@yield('title')"/>
 	<meta name="keywords" content="bootstrap, bootstrap5"/>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">

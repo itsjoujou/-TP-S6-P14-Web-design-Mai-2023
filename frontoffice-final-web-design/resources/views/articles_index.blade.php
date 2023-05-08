@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    
+Articles list
 @endsection
 
 @section('content')
