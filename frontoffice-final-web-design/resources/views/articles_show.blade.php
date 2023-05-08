@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="pt-3">
-                    <p>Category:  <a href="#">{{ $article->article_category->category_label }}</a></p>
+                    <p>Category:  <a href="{{ route('articles.index') }}">{{ $article->article_category->category_label }}</a></p>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
                     <h3 class="heading">Tags</h3>
                     <ul class="tags">
                         @foreach ($categories as $category)
-                            <li><a href="#">{{ $category->category_label }}</a></li>
+                            <li><a href="{{ route('articles.index') }}">{{ $category->category_label }}</a></li>
                         @endforeach
                     </ul>
                 </div>
