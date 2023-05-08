@@ -5,22 +5,39 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\ArticleCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ArticleController extends Controller
 {
     public function index() {
-        return view('articles_index',[
-            'articles' => Article::with('article_category', 'user')->get()
-        ]);
+        $articles = Cache::remember('articles', 120, function () {
+            return Article::with('article_category', 'user')->get();
+        });
+
+        $response = response()->view('articles_index', ['articles' => $articles]);
+        $response->header('Cache-Control', 'max-age=3600, public');
+
+        return $response;
     }
 
     public function show($slug) {
         $id = explode("-", $slug)[0];
 
-        return view('articles_show', [
-            'article' => Article::with('article_category', 'user')->find($id),
-            'categories' => ArticleCategory::all()
+        $article = Cache::remember('article-'.$id, 120, function () use ($id) {
+            return Article::with('article_category', 'user')->find($id);
+        });
+
+        $categories = Cache::remember('categories', 120, function () {
+            return ArticleCategory::all();
+        });
+
+        $response = response()->view('articles_show', [
+            'article' => $article,
+            'categories' => $categories
         ]);
+        $response->header('Cache-Control', 'max-age=3600, public');
+        
+        return $response;
     }
 
     public function search(Request $request) {
