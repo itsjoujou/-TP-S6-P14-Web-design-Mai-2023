@@ -55,7 +55,7 @@
                     <h3 class="heading">Tags</h3>
                     <ul class="tags">
                         @foreach ($categories as $category)
-                            <li><a href="{{ route('articles.index') }}">{{ $category->category_label }}</a></li>
+                            <li><a href="{{ route('articles.index') }}" aria-label="Read more articles about {{ $category->category_label }}">{{ $category->category_label }}</a></li>
                         @endforeach
                     </ul>
                 </div>
