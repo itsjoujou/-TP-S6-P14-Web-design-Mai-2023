@@ -44,14 +44,14 @@
     	</div>
     </div>
 
-    <script src="{{ asset('theme/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('theme/js/tiny-slider.js') }}"></script>
-    <script src="{{ asset('theme/js/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('theme/js/aos.js') }}"></script>
-    <script src="{{ asset('theme/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('theme/js/navbar.js') }}"></script>
-    <script src="{{ asset('theme/js/counter.js') }}"></script>
-    <script src="{{ asset('theme/js/custom.js') }}"></script>
+    <script src="{{ asset('theme/js/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('theme/js/tiny-slider.js') }}" defer></script>
+    <script src="{{ asset('theme/js/flatpickr.min.js') }}" defer></script>
+    <script src="{{ asset('theme/js/aos.js') }}" defer></script>
+    <script src="{{ asset('theme/js/glightbox.min.js') }}" defer></script>
+    <script src="{{ asset('theme/js/navbar.js') }}" defer></script>
+    <script src="{{ asset('theme/js/counter.js') }}" defer></script>
+    <script src="{{ asset('theme/js/custom.js') }}" defer></script>
 
     <!-- page assets -->
     @yield('page_assets')
